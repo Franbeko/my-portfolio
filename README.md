@@ -1,4 +1,4 @@
-# 💼 Francis Khaizel's Portfolio Website
+# 💼 Francis Kojo Haizel's Portfolio Website
 
 This is a modern and fully responsive personal portfolio website developed using **HTML5**, **CSS3**, **Tailwind CSS**, and **JavaScript**. It serves as a digital resume, showcasing my web development skills, personal projects, educational background, and contact information. The site is hosted on **Netlify** and features a clean, minimal design focused on user experience and accessibility.
 
