@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-section {
+  padding-top: 6rem;
+  min-height: calc(100vh - 6rem);
+}
+
+.progress-ring-circle {
+  stroke-dasharray: 326.56;
+  stroke-dashoffset: 326.56;
+  stroke: #3B82F6;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+/* Navigation Styles */
+.nav-link {
+  @apply relative text-gray-700 dark:text-gray-300 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300;
+}
+
+.nav-link.active {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.nav-link:after {
+  @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300;
+}
+
+.nav-link:hover:after,
+.nav-link.active:after {
+  @apply w-full;
+}
+
+.nav-link-mobile {
+  @apply block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors duration-300;
+}
+
+.nav-link-mobile.active {
+  @apply bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400;
+}
+
+/* Skill Progress Ring */
+.progress-ring-circle {
+  stroke-dasharray: 326.56;
+  stroke-dashoffset: 326.56;
+  @apply stroke-blue-500 dark:stroke-blue-400;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.animate-fade-in.delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-fade-in.delay-200 {
+  animation-delay: 200ms;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Footer Styles */
+.social-icon {
+  @apply w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition-colors duration-300;
+}
+
+.social-icon svg {
+  @apply w-5 h-5;
+}
+
+/* Project Card Hover Effect */
+.project-card .project-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+}
+
+/* Testimonial Card Hover */
+.testimonial-item {
+  @apply transition-transform duration-300 hover:-translate-y-1;
+}
+
+/* Back to Top Button */
+#back-to-top {
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Form Inputs */
+input, textarea {
+  @apply transition-colors duration-300;
+}
+
+/* Dark mode transitions */
+.dark .dark\:bg-gray-900 {
+  transition: background-color 0.3s;
+}
+
+/* Accessibility Focus Styles */
+a:focus, button:focus, input:focus, textarea:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* Lazy loading for images */
+img[loading="lazy"] {
+  @apply transition-opacity duration-300 opacity-0;
+}
+
+img[loading="lazy"].loaded {
+  @apply opacity-100;
+}
+
+/* See More Button Animation */
+#see-more-btn {
+  transition: all 0.3s ease;
+}
+
+#see-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Newsletter Form */
+#newsletter-form input::placeholder {
+  @apply text-blue-300;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    @apply text-4xl;
+  }
+  
+  .hero-section p {
+    @apply text-lg;
+  }
+}

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional portfolio of Francis Kojo Haizel, Fullstack Developer specializing in Frontend and WordPress development">
+  <meta name="keywords" content="fullstack developer, frontend developer, WordPress developer, web developer portfolio">
+  <meta name="author" content="Francis Kojo Haizel">
+  <meta property="og:title" content="Francis Kojo Haizel | Fullstack Developer">
+  <meta property="og:description" content="Professional portfolio showcasing my projects and skills">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://franciskhaizel-web-dev.netlify.app/">
+  
+  <title>Francis Kojo Haizel | Fullstack Developer</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="./src/css/styles.css" as="style">
+  <link rel="preload" href="./src/js/script.js" as="script">
+ <!-- Tailwind CSS CDN -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+   tailwind.config = {
+     darkMode: 'class',
+     theme: {
+       extend: {
+         colors: {
+           primary: {
+             500: '#3B82F6',  // blue-500
+             600: '#2563EB'   // blue-600
+           }
+         }
+       }
+     }
+   }
+ </script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./src/css/styles.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  
+ <!-- Hotjar Tracking Code for https://franciskhaizel-web-dev.netlify.app/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:5362342,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+  <!-- Navigation -->
+  <header class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo/Brand -->
+        <a href="index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">
+          <span class="text-gray-900 dark:text-white">WebDev</span>ByFrancis
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700" aria-label="Toggle dark mode">
+          <svg id="theme-icon-light" class="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+          </svg>
+          <svg id="theme-icon-dark" class="w-5 h-5 text-yellow-300 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+        <a href="#home" class="block py-2 nav-link-mobile active">Home</a>
+        <a href="#skills" class="block py-2 nav-link-mobile">Skills</a>
+        <a href="#projects" class="block py-2 nav-link-mobile">Projects</a>
+        <a href="#testimonials" class="block py-2 nav-link-mobile">Testimonials</a>
+        <a href="#about" class="block py-2 nav-link-mobile">About</a>
+        <a href="#contact" class="block py-2 nav-link-mobile">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 text-white pt-16">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">Hi, I'm <span class="text-yellow-300">Francis Kojo Haizel</span></h1>
+      <p class="text-xl md:text-2xl mb-8 animate-fade-in delay-100">Fullstack Developer | Frontend Developer | WordPress Development</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in delay-200">
+        <a href="#projects" class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-500">
+          View My Work
+        </a>
+        <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+          Hire Me
+        </a>
+      </div>
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#skills" class="text-white" aria-label="Scroll down">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-4">My Skills</h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">I've honed a diverse set of skills to deliver exceptional digital experiences</p>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Skill Item 1 - React.js -->
+        <div class="skill-item opacity-0 transform translate-y-10 transition-all duration-500">
+          <div class="skill-progress" data-percent="70">
+            <svg class="progress-ring w-32 h-32" width="120" height="120">
+              <circle class="progress-ring-circle" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+            </svg>
+            <span class="skill-percent absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-gray-800 dark:text-gray-200">65%</span>
+          </div>
+          <h3 class="text-center mt-4 font-medium">React.js</h3>
+        </div>
+        
+        <!-- Skill Item 2 - WordPress -->
+        <div class="skill-item opacity-0 transform translate-y-10 transition-all duration-500">
+          <div class="skill-progress" data-percent="90">
+            <svg class="progress-ring w-32 h-32" width="120" height="120">
+              <circle class="progress-ring-circle" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+            </svg>
+            <span class="skill-percent absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-gray-800 dark:text-gray-200">90%</span>
+          </div>
+          <h3 class="text-center mt-4 font-medium">WordPress</h3>
+        </div>
+        
+        <!-- Skill Item 3 - Changed from Node.js to JavaScript -->
+        <div class="skill-item opacity-0 transform translate-y-10 transition-all duration-500">
+          <div class="skill-progress" data-percent="85">
+            <svg class="progress-ring w-32 h-32" width="120" height="120">
+              <circle class="progress-ring-circle" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+            </svg>
+            <span class="skill-percent absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-gray-800 dark:text-gray-200">60%</span>
+          </div>
+          <h3 class="text-center mt-4 font-medium">JavaScript</h3>
+        </div>
+        
+        <!-- Skill Item 4 - Changed from UI/UX Design to PHP -->
+        <div class="skill-item opacity-0 transform translate-y-10 transition-all duration-500">
+          <div class="skill-progress" data-percent="80">
+            <svg class="progress-ring w-32 h-32" width="120" height="120">
+              <circle class="progress-ring-circle" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+            </svg>
+            <span class="skill-percent absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-gray-800 dark:text-gray-200">70%</span>
+          </div>
+          <h3 class="text-center mt-4 font-medium">PHP</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-4">Featured Projects</h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">Here are some of my recent projects. Click to learn more about each one.</p>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <!-- Project 1 -->
+        <div class="project-card group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img loading="lazy" src="./public/images/img2.png" alt="Bean Boutique Coffee Shop" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div>
+              <h3 class="text-white text-xl font-bold">Bean Boutique Coffee Shop Website</h3>
+              <p class="text-gray-300 mb-4">HTML, CSS, JS</p>
+              <div class="flex space-x-2">
+                <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded">Frontend</span>
+                <!-- <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Backend</span> -->
+              </div>
+              <button class="mt-4 text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                View Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img loading="lazy" src="./public/images/img3.png" alt="FrancisPharma" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div>
+              <h3 class="text-white text-xl font-bold">Online Pharmacy System</h3>
+              <p class="text-gray-300 mb-4">WordPress, PHP, Custom Theme</p>
+              <div class="flex space-x-2">
+                <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
+                <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded">PHP</span>
+              </div>
+              <button class="mt-4 text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                View Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img loading="lazy" src="./public/images/img4.png" alt="Admin Dashboard" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div>
+              <h3 class="text-white text-xl font-bold">Admin Dashboard</h3>
+              <p class="text-gray-300 mb-4">React, JavaScript, JSX</p>
+              <div class="flex space-x-2">
+                <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded">React</span>
+                <span class="bg-indigo-500 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                <span class="bg-indigo-500 text-white text-xs px-2 py-1 rounded">JSX</span>
+              </div>
+              <button class="mt-4 text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                View Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Hidden Projects (will be shown when "See More" is clicked) -->
+      <div id="more-projects" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <!-- Project 4 -->
+        <div class="project-card group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img loading="lazy" src="./public/images/img5.png" alt="Language Translator" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div>
+              <h3 class="text-white text-xl font-bold">Language Translator</h3>
+              <p class="text-gray-300 mb-4">HTML, CSS, & JavaScript</p>
+              <div class="flex space-x-2">
+                <span class="bg-blue-400 text-white text-xs px-2 py-1 rounded">HTML</span>
+                <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">CSS</span>
+                <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">JS</span>
+              </div>
+              <button class="mt-4 text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                View Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 5 -->
+        <div class="project-card group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img loading="lazy" src="./public/images/img6.png" alt="Weather Web App" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div>
+              <h3 class="text-white text-xl font-bold">Weather Web App</h3>
+              <p class="text-gray-300 mb-4">HTML, CSS, JavaScript</p>
+              <div class="flex space-x-2">
+                <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">HTML</span>
+                <span class="bg-blue-400 text-white text-xs px-2 py-1 rounded">CSS</span>
+                <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded">JS</span>
+              </div>
+              <button class="mt-4 text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                View Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 6 -->
+        <div class="project-card group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <img loading="lazy" src="./public/images/img7.png" alt="LiveStocksBroker" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div>
+              <h3 class="text-white text-xl font-bold">LiveStocksBroker Investment Website</h3>
+              <p class="text-gray-300 mb-4">WordPress</p>
+              <div class="flex space-x-2">
+                <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">WordPress</span>
+              </div>
+              <button class="mt-4 text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                View Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <button id="see-more-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          See More Projects
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-4">Client Testimonials</h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">Don't just take my word for it - here's what my clients say</p>
+      
+      <div class="testimonial-slider grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-item bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <img loading="lazy" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Benjamin" class="w-12 h-12 rounded-full mr-4 object-cover">
+            <div>
+              <h4 class="font-bold">Benjamin</h4>
+              <p class="text-gray-500 dark:text-gray-400">CEO, LiveStocksBroker Investment</p>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">"Working with Francis Kojo Haizel was a game-changer for our business. The website they built increased our conversions by 40% and their attention to detail is unmatched."</p>
+          <div class="mt-4 flex text-yellow-400">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+            <!-- Repeat 4 more times for 5 stars -->
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-item bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <img loading="lazy" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4 object-cover">
+            <div>
+              <h4 class="font-bold">Sarah Johnson</h4>
+              <p class="text-gray-500 dark:text-gray-400">Marketing Director</p>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">"The WordPress site Francis Kojo Haizel developed for us is not only beautiful but also performs exceptionally well. Their technical expertise and creative vision are impressive."</p>
+          <div class="mt-4 flex text-yellow-400">
+            <!-- 5 star rating SVG -->
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-item bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <img loading="lazy" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael Chen" class="w-12 h-12 rounded-full mr-4 object-cover">
+            <div>
+              <h4 class="font-bold">Michael Chen</h4>
+              <p class="text-gray-500 dark:text-gray-400">Startup Founder</p>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">"As a non-technical founder, I appreciated how Francis Kojo Haizel explained complex concepts clearly and delivered our MVP ahead of schedule. Highly recommended!"</p>
+          <div class="mt-4 flex text-yellow-400">
+            <!-- 5 star rating SVG -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <img loading="lazy" src="./public/images/me.jpg" alt="Francis Kojo Haizel" class="rounded-xl shadow-xl w-full max-w-md mx-auto hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold mb-6">About Me</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">I'm a passionate fullstack developer specializing in frontend development and WordPress development.</p>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">I combine technical expertise with creative design to build websites that are not only functional but also deliver exceptional user experiences. My approach focuses on clean code, performance optimization, and responsive design.</p>
+          
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>3+ Years Experience</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>50+ Projects</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>30+ Happy Clients</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Frontend Focus</span>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              Contact Me
+            </a>
+            <a href="./public/images/FRANCIS-KOJO-HAIZEL_CV-WebDev.pdf" class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 px-6 py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+              Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold text-center mb-4">Get In Touch</h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!</p>
+      
+      <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="md:col-span-2">
+          <label for="name" class="block mb-2 font-medium">Your Name</label>
+          <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        
+        <div>
+          <label for="email" class="block mb-2 font-medium">Email Address</label>
+          <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        
+        <div>
+          <label for="phone" class="block mb-2 font-medium">Phone Number (Optional)</label>
+          <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        
+        <div class="md:col-span-2">
+          <label for="message" class="block mb-2 font-medium">Your Message</label>
+          <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+        </div>
+        
+        <div class="md:col-span-2">
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 w-full">
+            Send Message
+          </button>
+        </div>
+      </form>
+      
+      <div id="form-success" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg text-center">
+        Thank you! Your message has been sent successfully. I'll get back to you soon.
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-blue-600 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated</h3>
+        <p class="mb-6 max-w-2xl mx-auto">Subscribe to my newsletter for the latest projects, and insights on frontend and WordPress development.</p>
+        <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input type="email" placeholder="Your email address" required class="flex-grow px-4 py-3 rounded-lg bg-blue-500 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-white focus:border-white">
+          <button type="submit" class="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600">
+            Subscribe
+          </button>
+        </form>
+        <p class="mt-4 text-sm text-blue-200">No spam, just valuable content. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 pt-16 pb-10">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <!-- About Column -->
+        <div class="md:col-span-2">
+          <h3 class="text-2xl font-bold text-white mb-6">About Me</h3>
+          <p class="mb-6">I'm a passionate fullstack developer specializing in frontend and WordPress development, dedicated to creating exceptional digital experiences.</p>
+          <div class="flex space-x-4">
+            <a href="https://www.instagram.com/webdevbyfrancis?igsh=Y241bnBwdXJuY2k%3D&utm_source=qr" class="social-icon" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path>
+              </svg>
+            </a>
+            <a href="https://github.com/" class="social-icon" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+              </svg>
+            </a>
+            <a href="http://wa.me/+231776005247" class="social-icon" aria-label="WhatsApp">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-xl font-bold text-white mb-6">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="#home" class="hover:text-blue-400 transition-colors">Home</a></li>
+            <li><a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a></li>
+            <li><a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a></li>
+            <li><a href="#testimonials" class="hover:text-blue-400 transition-colors">Testimonials</a></li>
+            <li><a href="#about" class="hover:text-blue-400 transition-colors">About</a></li>
+            <li><a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-xl font-bold text-white mb-6">Contact Info</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 mt-1 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <span>franciskhhaizel@gmail.com</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 mt-1 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              <span>+231 (776) 005-247</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 mt-1 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <span>+233 (538) 288-769</span>
+              </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 mt-1 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span>Accra, Ghana</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 border-t border-gray-800 text-center">
+        <p>&copy; <span id="current-year"></span> Francis Kojo Haizel. All rights reserved.</p>
+        <p class="mt-2 text-sm text-gray-500">Built with ❤️ and modern web technologies</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors hidden focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" aria-label="Back to top">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="./src/js/script.js"></script>
+</body>
+</html>
